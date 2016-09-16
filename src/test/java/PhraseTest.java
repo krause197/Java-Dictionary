@@ -26,4 +26,11 @@ public class PhraseTest {
     assertEquals(0, myPhrase.getId());
   }
 
+  @Test
+  public void Phrase_allInstancesOfPhrase_true() {
+    Phrase phrase1 = new Phrase ("Bolo");
+    Phrase phrase2 = new Phrase ("Cannibalize");
+    assertEquals(true, Phrase.all().contains(phrase1));
+    assertEquals(true, Phrase.all().contains(phrase2));
+  }
 }

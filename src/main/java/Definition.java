@@ -23,4 +23,9 @@ public class Definition {
   public int getId() {
     return mId;
   }
+
+  public static List<Definition> all() {
+    return instances;
+  }
+  
 }

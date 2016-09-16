@@ -24,4 +24,8 @@ public class Phrase {
   public int getId() {
     return mId;
   }
+
+  public static List<Phrase> all() {
+    return instances;
+  }
 }

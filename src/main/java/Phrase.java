@@ -13,5 +13,8 @@ public class Phrase {
     instances.add(this);
   }
 
+  public String getPhrase() {
+    return mPhrase;
+  }
 
 }

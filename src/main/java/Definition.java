@@ -11,4 +11,9 @@ public class Definition {
     mId = instances.size();
     instances.add(this);
   }
+
+  public String getDefinition() {
+    return mDefinition;
+  }
+  
 }

@@ -9,4 +9,9 @@ public class PhraseTest {
     assertEquals(true, myPhrase instanceof Phrase);
   }
 
+  @Test
+  public void Phrase_getPhrase_phrase() {
+    Phrase myPhrase = new Phrase("Bolo");
+    assertEquals("Bolo", myPhrase.getPhrase());
+  }
 }

@@ -3,6 +3,11 @@ import static org.junit.Assert.*;
 
 public class PhraseTest {
 
+  @After
+  public void tearDown() {
+    Phrase.clear();
+  }
+
   @Test
   public void Phrase_initiatesCorrectly_true() {
     Phrase myPhrase = new Phrase("Bolo");
@@ -14,4 +19,11 @@ public class PhraseTest {
     Phrase myPhrase = new Phrase("Bolo");
     assertEquals("Bolo", myPhrase.getPhrase());
   }
+
+  @Test
+  public void Phrase_getId_0() {
+    Phrase myPhrase = new Phrase("Bolo");
+    assertEquals(0, myPhrase.getId());
+  }
+
 }

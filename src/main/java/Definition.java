@@ -12,8 +12,15 @@ public class Definition {
     instances.add(this);
   }
 
+  public static void clear() {
+    instances.clear();
+  }
+
   public String getDefinition() {
     return mDefinition;
   }
-  
+
+  public int getId() {
+    return mId;
+  }
 }

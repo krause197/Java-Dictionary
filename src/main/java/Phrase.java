@@ -13,8 +13,15 @@ public class Phrase {
     instances.add(this);
   }
 
+  public static void clear() {
+    instances.clear();
+  }
+
   public String getPhrase() {
     return mPhrase;
   }
 
+  public int getId() {
+    return mId;
+  }
 }

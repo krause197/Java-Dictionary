@@ -25,7 +25,23 @@ public class Phrase {
     return mId;
   }
 
+  public List<Definition> getDefinition() {
+    return mDefinition;
+  }
+
   public static List<Phrase> all() {
     return instances;
+  }
+
+  public static Phrase find(int id) {
+    try {
+      return instances.get(id);
+    } catch (IndexOutOfBoundsException exception) {
+      return null;
+    }
+  }
+
+  public void addDefinition(Definition definition) {
+    mDefinition.add(definition);
   }
 }

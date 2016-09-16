@@ -27,5 +27,8 @@ public class Definition {
   public static List<Definition> all() {
     return instances;
   }
-  
+
+  public static Definition find(int id) {
+    return instances.get(id);
+  }
 }

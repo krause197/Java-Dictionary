@@ -11,36 +11,38 @@ public class App {
 
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
+      model.put("phrases", Phrase.all());
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     get("/phrases/new", (request, response) -> {
-      Map<String, Object> model = newHashMap<String, Object>();
-      model.put("template", "templates/Phrase-form.vtl");
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/phrase-form.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/phrases", (request, response) -> {
+    post("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("Phrases", Phrase.all());
-      model.put("template", "templates/Phrases.vtl");
+      Phrase phrase = new Phrase(request.queryParams("phrase"));
+      model.put("phrases", Phrase.all());
+      model.put("template", "templates/phrases.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/phrases", (request, response) -> {
-      Map<String, Object> model = new HashMap<String, Object>();
-      String stringUserPhrase = request.queryParams("userWord");
-      Phrase userWord = new Phrase(stringUserPhrase);
-      model.put("template", "templates/word-success.vtl");
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
+    // post("/phrases", (request, response) -> {
+    //   Map<String, Object> model = new HashMap<String, Object>();
+    //   String stringUserPhrase = request.queryParams("userWord");
+    //   Phrase userWord = new Phrase(stringUserPhrase);
+    //   model.put("template", "templates/phrases.vtl");
+    //   return new ModelAndView(model, layout);
+    // }, new VelocityTemplateEngine());
 
     get("/phrases/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Phrase userPhrase = Phrase.find(Integer.parseInt(request.params(":id")));
-      model.put("Phrase", userPhrase);
-      model.put("template", "templates/phrase.vtl");
+      model.put("phrase", userPhrase);
+      model.put("template", "templates/phrases.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
@@ -58,7 +60,7 @@ public class App {
       String stringUserDefinition = request.queryParams("userDefinition");
       Definition userDefinition = new Definition(stringUserDefinition);
       phrase.addDefinition(userDefinition);
-      model.put("template", "templates/definitionCreated.vtl");
+      model.put("template", "templates/definition-success.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 

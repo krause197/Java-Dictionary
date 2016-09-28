@@ -5,16 +5,12 @@ public class Phrase {
   private String mPhrase;
   private static List<Phrase> instances = new ArrayList<Phrase>();
   private int mId;
-  private List<Definition> mDefinition = new ArrayList<Definition>();
+  private List<Definition> mDefinitions = new ArrayList<Definition>();
 
   public Phrase(String phrase) {
     mPhrase = phrase;
     mId = instances.size();
     instances.add(this);
-  }
-
-  public static void clear() {
-    instances.clear();
   }
 
   public String getPhrase() {
@@ -25,8 +21,8 @@ public class Phrase {
     return mId;
   }
 
-  public List<Definition> getDefinition() {
-    return mDefinition;
+  public List<Definition> getDefinitions() {
+    return mDefinitions;
   }
 
   public static List<Phrase> all() {
@@ -42,6 +38,10 @@ public class Phrase {
   }
 
   public void addDefinition(Definition definition) {
-    mDefinition.add(definition);
+    mDefinitions.add(definition);
+  }
+
+  public static void clear() {
+    instances.clear();
   }
 }

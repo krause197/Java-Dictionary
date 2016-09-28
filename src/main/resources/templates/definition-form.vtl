@@ -1,10 +1,11 @@
 <h1>Add a Definition<h1>
 
-<form action="/phrases/$phrase.getId()" method="post"
+<form action="/phrases/$phrase.getId()/definitions/new" method="post"
   <div class="form-group">
-    <label for="definition">Definition:</label><input type="text" name="definition" required>
+    <label for="definition">Definition:</label><input class="form-control" type="text" name="definition" required>
   </div>
   <button class="btn btn-success" type="submit" name="add-definition">Add</button>
+  <a href="/phrases/$phrase.getId()"><button class="btn btn-primary" type="button" name="return">Return</button></a>
 </form>
 
 <a href="/">Home</a>

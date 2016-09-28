@@ -12,10 +12,6 @@ public class Definition {
     instances.add(this);
   }
 
-  public static void clear() {
-    instances.clear();
-  }
-
   public String getDefinition() {
     return mDefinition;
   }
@@ -28,7 +24,8 @@ public class Definition {
     return instances;
   }
 
-  public static Definition find(int id) {
-    return instances.get(id);
+  public static void clear() {
+    instances.clear();
   }
+
 }

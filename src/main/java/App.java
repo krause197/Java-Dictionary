@@ -29,21 +29,6 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    // get("/phrases", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
-    //   Phrase phrase = new Phrase(request.queryParams("phrase"));
-    //   model.put("phrases", Phrase.all());
-    //   model.put("template", "templates/phrases.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
-    //
-    // post("/phrases", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
-    //   String stringUserPhrase = request.queryParams("userPhrase");
-    //   Phrase userPhrase = new Phrase(stringUserPhrase);
-    //   model.put("template", "templates/phrases.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
 
     get("/phrases/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
@@ -70,13 +55,6 @@ public class App {
       response.redirect("/phrases/" + phraseId);
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
-
-    // get("/definitions", (request, response) -> {
-    //   Map<String,Object> model = new HashMap<String, Object>();
-    //   model.put("definitions", Definition.all());
-    //   model.put("template", "templates/definitions.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
 
   }
 }

@@ -1,14 +1,15 @@
+  <h1>$phrase.getPhrase()</h1>
+
 #if ($phrase)
-<h1>$phrase.getPhrase()<h1>
-  #for each ($definition in $phrase.getDefinitions())
     <ul>
-      <li class="definitions">$definition.getDefinition()<li>
+      #foreach ($definition in $phrase.getDefinitions())
+        <li class="definitions">$definition.getDefinition()</li>
+      #end
     </ul>
-  #end
-  <button class="btn btn-success" type"button" name="add-new-definition"><a class="button-link" href="/phrases/$phrase.getId()/definitions/new">Add a definition</a></button>
+#else
+  <h4>That phrase does not yet have a definition in the dictionary</h4>
+#end
 
-  < href="/">Home</a>
+<button class="btn btn-success" type"button" name="add-new-definition"><a class="button-link" href="/phrases/$phrase.getId()/definitions/new">Add a definition</a></button>
 
-  #else
-    <em><h4>That phrase does not yet exist in the dictionary</h4></em>
-  #end
+<a href="/">Home</a>

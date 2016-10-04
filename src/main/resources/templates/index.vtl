@@ -1,8 +1,9 @@
 <h1>Phrase Dictionary</h1>
 <h2>Military Phrases:<h2>
+
 <ul>
   #foreach ($phrase in $phrases)
-    <li class="phrases"><a href="/phrases/$phrase.getId()">$phrase.getPhrase()</a></li>
+    <li class="phrase"><a href="/phrases/$phrase.getId()">$phrase.getPhrase()</a></li>
   #end
 </ul>
 <button class="btn- btn-success" type="button" name="add-phrase"><a class="button-link" href="/phrases/new">Create New Phrase</a></button>

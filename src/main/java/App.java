@@ -24,7 +24,8 @@ public class App {
 
     post("/phrases/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      Phrase phrase = new Phrase(request.queryParams("phrase"));
+      String phrase = request.queryParams("phrase");
+      Phrase newPhrase = new Phrase(phrase);
       response.redirect("/");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -42,7 +43,7 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       Phrase phrase = Phrase.find(Integer.parseInt(request.params(":id")));
       model.put("phrase", phrase);
-      model.put("template", "template/definition-form.vtl");
+      model.put("template", "templates/definition-form.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 

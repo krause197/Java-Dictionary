@@ -29,7 +29,7 @@ Eric Krause
 
 ## Known Bugs
 
-Having issue with add to dictionary button on /phrases/new
+There are currently no known bugs
 
 ## Support and contact details
 

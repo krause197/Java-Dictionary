@@ -34,10 +34,4 @@ public class DefinitionTest {
     assertEquals(true, Definition.all().contains(definition2));
   }
 
-//   @Test
-//   public void Definition_returnDefinitionWithCorrectID_Definition2() {
-//     Definition definition1 = new Definition ("Soldier who fails weapons qual");
-//     Definition definition2 = new Definition ("Soldier who can not use rifle");
-//     assertEquals(Definition.find(definition2.getId()), definition2);
-//   }
 }

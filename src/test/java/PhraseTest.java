@@ -41,13 +41,4 @@ public class PhraseTest {
     assertEquals(Phrase.find(phrase2.getId()), phrase2);
   }
 
-  // @Test
-  // public void Definition_addDefinitionToList_true() {
-  //   Phrase phrase = new Phrase("Bolo");
-  //   Definition definition = new Definition("Soldier who fails weapons qual");
-  //   List<Object> expected = new ArrayList<Object>();
-  //   expected.add(definition);
-  //   Phrase.addDefinition(definition);
-  //   assertEquals(expected, Phrase.getDefinition());
-  // }
 }
